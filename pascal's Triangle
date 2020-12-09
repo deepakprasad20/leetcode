@@ -20,7 +20,7 @@ class Solution {
         }
         return triangle.get(rowIndex);
         
-        // In O(n):
+        // In O(n): for a particular line
         List<Integer> r = new ArrayList<>();
         int line = rowIndex+1;
         long number= 1;
