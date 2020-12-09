@@ -1,5 +1,6 @@
 class Solution {
     public List<Integer> getRow(int rowIndex) {
+        // O(n^2)
         List<List<Integer>> triangle = new ArrayList<>();
         List<Integer> firstRow = new ArrayList<>();
         firstRow.add(1);
@@ -18,5 +19,15 @@ class Solution {
             triangle.add(currRow);
         }
         return triangle.get(rowIndex);
+        
+        // In O(n):
+        List<Integer> r = new ArrayList<>();
+        int line = rowIndex+1;
+        long number= 1;
+        for(int i = 1; i<=line; i++){
+            r.add((int)number);
+            number = number * (line - i) / i;  
+        }
+        return r;
     }
 }
